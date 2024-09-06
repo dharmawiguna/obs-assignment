@@ -1,7 +1,7 @@
 // src/components/EditModal.tsx
 
-import React, { ChangeEvent } from "react"; // Sesuaikan path ke tipe UserTypes
-import { UserTypes } from "../types/types";
+import React, { ChangeEvent } from 'react'; // Sesuaikan path ke tipe UserTypes
+import { UserTypes } from '../types/types';
 
 interface EditModalProps {
   isOpen: boolean;

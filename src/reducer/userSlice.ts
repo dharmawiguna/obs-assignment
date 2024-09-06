@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Geo {
   lat: string;
@@ -33,22 +33,22 @@ interface UserState {
   users: User[];
 }
 
-const storedUsers = localStorage.getItem("users");
+const storedUsers = localStorage.getItem('users');
 const initialState: UserState = {
   users: storedUsers ? JSON.parse(storedUsers) : [],
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     setUsers: (state, action: PayloadAction<User[]>) => {
       state.users = action.payload;
-      localStorage.setItem("users", JSON.stringify(state.users));
+      localStorage.setItem('users', JSON.stringify(state.users));
     },
     clearUsers: (state) => {
       state.users = [];
-      localStorage.removeItem("users");
+      localStorage.removeItem('users');
     },
   },
 });

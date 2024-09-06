@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { UserTypes } from "../types/types";
-import { HiGlobeAlt, HiOutlineLocationMarker } from "react-icons/hi";
+import React, { FC } from 'react';
+import { UserTypes } from '../types/types';
+import { HiGlobeAlt, HiOutlineLocationMarker } from 'react-icons/hi';
 
 interface ModalViewProps {
   selectedUser: UserTypes;
@@ -39,9 +39,9 @@ const ModalView: FC<ModalViewProps> = ({
                   <div>
                     <span className="text-gray-400">
                       <div className="flex items-center">
-                        {selectedUser.address.street} |{" "}
-                        {selectedUser.address.suite} |{" "}
-                        {selectedUser.address.zipcode} |{" "}
+                        {selectedUser.address.street} |{' '}
+                        {selectedUser.address.suite} |{' '}
+                        {selectedUser.address.zipcode} |{' '}
                         <a
                           href={`https://maps.google.com/?q=${selectedUser.address.geo.lat},${selectedUser.address.geo.lng}`}
                           target="_blank"

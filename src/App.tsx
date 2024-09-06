@@ -1,16 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { HiOutlineEye, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
-import ModalEdit from "./components/ModalEdit";
-import ModalView from "./components/ModalView";
-import { setUsers } from "./reducer/userSlice";
-import { RootState } from "./store";
-import { UserTypes } from "./types/types";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { HiOutlineEye, HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi';
+import { useDispatch, useSelector } from 'react-redux';
+import './App.css';
+import ModalEdit from './components/ModalEdit';
+import ModalView from './components/ModalView';
+import { setUsers } from './reducer/userSlice';
+import { RootState } from './store';
+import { UserTypes } from './types/types';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -20,25 +20,25 @@ const App: React.FC = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [editForm, setEditForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    website: "",
-    username: "",
+    name: '',
+    email: '',
+    phone: '',
+    website: '',
+    username: '',
     address: {
-      street: "",
-      city: "",
-      suite: "",
+      street: '',
+      city: '',
+      suite: '',
       geo: {
-        lat: "",
-        lng: "",
+        lat: '',
+        lng: '',
       },
-      zipcode: "",
+      zipcode: '',
     },
     company: {
-      name: "",
-      bs: "",
-      catchPhrase: "",
+      name: '',
+      bs: '',
+      catchPhrase: '',
     },
   });
 
@@ -46,11 +46,11 @@ const App: React.FC = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/users"
+          'https://jsonplaceholder.typicode.com/users'
         );
         dispatch(setUsers(response.data));
       } catch (error) {
-        console.error("Error fetching users:", error);
+        console.error('Error fetching users:', error);
       }
     };
 
@@ -61,7 +61,7 @@ const App: React.FC = () => {
   const handleDelete = (id: number) => {
     const updatedUsers = users.filter((user) => user.id !== id);
     dispatch(setUsers(updatedUsers));
-    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
   };
 
   // Open edit modal and populate form
@@ -98,7 +98,7 @@ const App: React.FC = () => {
       user.id === selectedUser?.id ? { ...user, ...editForm } : user
     );
     dispatch(setUsers(updatedUsers));
-    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
     setIsEditModalOpen(false);
   };
 
