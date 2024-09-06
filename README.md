@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# User Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is a simple **User Management Application** built with **React.js**, **TypeScript**, **Tailwind CSS**, and **Redux**. The app fetches user data from an external API and displays it in a table format. Each row in the table contains three action buttons to view, edit, or delete user information. The app uses local storage to store the updated user data and provides modal popups for editing and viewing user details.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **View User Details**: You can view detailed information about a user by clicking the "view" icon.
+- **Edit User**: Users can be edited by clicking the "edit" icon, which opens a form modal for updating the user data.
+- **Delete User**: You can delete a user from the list by clicking the "delete" icon. The user data will be removed from both the table and local storage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **React.js**
+- **TypeScript**
+- **Redux** (for state management)
+- **Axios** (for API requests)
+- **Tailwind CSS** (for styling)
+- **React Icons** (for action buttons)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow the instructions below to run this project on your local machine.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ensure you have the following installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (>= 14.x)
+- **npm** (>= 6.x) or **yarn**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```bash
+   git clone https://github.com/dharmawiguna/obs-assignment.git
+   cd obs-assignment
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or with Yarn:
+   ```bash
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Running the Application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run the application locally, execute the following command:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+or with Yarn:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn start
+```
+
+The application will be available at http://localhost:3000 in your browser.
+
+### Building the Application
+
+To build the project for production, run:
+
+```bash
+npm run build
+```
+
+or with Yarn:
+
+```bash
+yarn build
+```
+
+## Additional Information
+
+- The application fetches user data from https://jsonplaceholder.typicode.com/users
+- The user data is stored in Redux for state management, and all updates (edit and delete) are synced with the browser's local storage.
+- Tailwind CSS is used for styling, ensuring a responsive and clean user interface
